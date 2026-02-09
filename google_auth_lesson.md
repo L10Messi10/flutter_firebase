@@ -51,20 +51,21 @@ Because we are using Google Sign-In on the Web, we need to handle a few extra se
 1.  Go to [GCP Library](https://console.cloud.google.com/apis/library).
 2.  Search for **Google People API** and click **ENABLE**. (This allows you to see the user's name and photo).
 
-### Step 5: Whitelist Localhost (For Chrome Testing)
+### Step 5. **Whitelist Localhost (For Chrome Testing)**:
 
-1.  Go to [GCP Credentials](https://console.cloud.google.com/apis/credentials).
-2.  Find the **Web client** ID (auto-created by Firebase).
-3.  Click the Pencil icon to edit.
-4.  Under **Authorized JavaScript origins**, add:
-    - `http://localhost`
-    - `http://localhost:5000`
-5.  **Copy the Web Client ID** (you will need it for `index.html`).
+    - Go to [GCP Credentials](https://console.cloud.google.com/apis/credentials).
+    - Find the **Web client** ID (auto-created by Firebase).
+    - Click the Pencil icon to edit.
+    - Under **Authorized JavaScript origins**, add:
+      - `http://localhost`
+      - `http://localhost:5000`
+    - **Note**: *Without this, Google may block the login request for students even if it works for you.*
+    - **Copy the Web Client ID** (you will need it for `index.html`).
 
-### Step 6: Publish the App
-
-1.  Go to **OAuth consent screen**.
-2.  Under "Publishing status", click **PUBLISH APP**. This ensures any student can log in without being manually added as a "Test User".
+6.  **Publish the App**:
+    - Go to **OAuth consent screen**.
+    - Under "Publishing status", click **PUBLISH APP**.
+    - **Why this matters**: _Without this, you would have to manually add every student's email as a "Test User". Publishing makes it open to everyone._
 
 ---
 
