@@ -49,7 +49,9 @@ Before coding, we must configure the project in the [Firebase Console](https://c
     _Then, get the SHA-1 key:_
     - Open terminal in `android` folder.
     - Run: `.\gradlew signingReport`
-    - Copy the `SHA1` key from the `debug` variant.
+    - **Look for the section that says `> Task :app:signingReport`**
+    - Find the entry where `Variant:` is `debug` and `Config:` is `debug`.
+    - Copy the `SHA1` key from that block.
     - Paste it into Firebase Console > _Project Settings > Android App > Add Fingerprint_.
 
 ---
