@@ -25,8 +25,13 @@ Before coding, we must configure the project in the [Firebase Console](https://c
 ### Critical Steps:
 
 1.  **Create Project**: Set up a new Firebase project.
-2.  **Enable Auth**: Turn on "Google" in the _Authentication > Sign-in method_ tab.
-3.  **Database Rules**: Set Realtime Database rules to allow authenticated read/write:
+2.  **Add Android App**:
+    - Click **"Add app"** and select **Android**.
+    - **Package Name**: `com.example.flutter_firebase` (This is crucial!).
+    - **SHA-1**: See step 4 below.
+    - **Download `google-services.json`** and put it in your `android/app` folder.
+3.  **Enable Auth**: Turn on "Google" in the _Authentication > Sign-in method_ tab.
+4.  **Database Rules**: Set Realtime Database rules to allow authenticated read/write:
     ```json
     {
       "rules": {
@@ -39,7 +44,7 @@ Before coding, we must configure the project in the [Firebase Console](https://c
       }
     }
     ```
-4.  **SHA-1 Fingerprint (Crucial for Android)**:
+5.  **SHA-1 Fingerprint (Crucial for Android)**:
     _If you see "Error: Missing keystore", run this command first to generate one:_
 
     ```powershell
