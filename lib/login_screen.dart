@@ -69,9 +69,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ? const CircularProgressIndicator()
                   : ElevatedButton.icon(
                       onPressed: _handleGoogleSignIn,
-                      icon: const Icon(
-                        Icons.login,
-                      ), // Material icon as placeholder for Google logo if needed
+                      icon: Image.network(
+                        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
+                        height: 24,
+                        width: 24,
+                      ),
                       label: const Text('Sign in with Google'),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(

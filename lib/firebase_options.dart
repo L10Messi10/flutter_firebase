@@ -44,20 +44,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'REPLACE_WITH_YOUR_WEB_API_KEY',
-    appId: 'REPLACE_WITH_YOUR_WEB_APP_ID',
-    messagingSenderId: 'REPLACE_WITH_YOUR_MESSAGING_SENDER_ID',
-    projectId: 'REPLACE_WITH_YOUR_PROJECT_ID',
-    authDomain: 'REPLACE_WITH_YOUR_AUTH_DOMAIN',
-    storageBucket: 'REPLACE_WITH_YOUR_STORAGE_BUCKET',
+    apiKey: 'AIzaSyAiy8_DtsL7Ubt31gIpC6YG80SUGuGzRIo',
+    appId: '1:159602535976:web:32475f9e6eba2d334a0f1d',
+    messagingSenderId: '159602535976',
+    projectId: 'gradium-f3e76',
+    authDomain: 'gradium-f3e76.firebaseapp.com',
+    storageBucket: 'gradium-f3e76.firebasestorage.app',
+    databaseURL:
+        'https://gradium-f3e76-default-rtdb.asia-southeast1.firebasedatabase.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'REPLACE_WITH_YOUR_ANDROID_API_KEY',
-    appId: 'REPLACE_WITH_YOUR_ANDROID_APP_ID',
+    apiKey: 'AIzaSyD0-o2-gejJcaWaS1OracjAuzS0DBadl_o',
+    appId: '1:159602535976:android:cd138822dfb453ba4a0f1d',
     messagingSenderId: 'REPLACE_WITH_YOUR_MESSAGING_SENDER_ID',
-    projectId: 'REPLACE_WITH_YOUR_PROJECT_ID',
-    storageBucket: 'REPLACE_WITH_YOUR_STORAGE_BUCKET',
+    projectId: 'gradium-f3e76',
+    storageBucket: 'gradium-f3e76.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
