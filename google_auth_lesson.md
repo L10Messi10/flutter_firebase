@@ -123,6 +123,26 @@ If CLI fails, open `lib/firebase_options.dart` and manually paste your:
 
 ---
 
+## 10. Security: Are my API Keys safe?
+
+You might notice that `firebase_options.dart` contains API Keys. In standard web development, we are taught NEVER to show API Keys. However, **Firebase is different.**
+
+### 1. API Keys are "Identifiers"
+
+In Firebase (including Realtime Database), the API key is not a "secret" like a credit card number. It is an **Identifier** that tells Google which project your app wants to talk to. Even if someone steals your API key, they cannot access your **Realtime Database** data unless they bypass your **Security Rules**.
+
+### 2. The Real Shield: Security Rules
+
+Security happens at the database level. Because we set our **Realtime Database Rules** in Step 3 to only allow users to read/write their **own** data (`auth.uid === $uid`), a hacker with your API key is still blocked from seeing other people's data. They can connect to the database, but the server will say "Permission Denied" for every single request they try to make.
+
+### 3. Extra Protection (API Restrictions)
+
+If you want to be even safer, you can go to **Google Cloud Console > Credentials**, find your API key, and restrict it so it only works on your specific website URL or Android App ID.
+
+---
+
+## 11. Conclusion & Next Steps
+
 ## Troubleshooting Checklist
 
 - **401 Error on Web?** Double-check your Web Client ID and Localhost whitelisting in Step 5.
