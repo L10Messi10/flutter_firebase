@@ -39,11 +39,18 @@ Before coding, we must configure the project in the [Firebase Console](https://c
       }
     }
     ```
-4.  **SHA-1 Fingerprint (Android Only)**:
-    - Run `gradlew signingReport` in the `android` folder.
-    - Copy the `SHA1` key (Debug).
-    - Paste it into _Project Settings > Android App > Add Fingerprint_.
-    - **Without this, Google Sign-In will FAIL with a generic error.**
+4.  **SHA-1 Fingerprint (Crucial for Android)**:
+    _If you see "Error: Missing keystore", run this command first to generate one:_
+
+    ```powershell
+    keytool -genkey -v -keystore "C:\Users\LIO\.android\debug.keystore" -storepass android -alias AndroidDebugKey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+    ```
+
+    _Then, get the SHA-1 key:_
+    - Open terminal in `android` folder.
+    - Run: `.\gradlew signingReport`
+    - Copy the `SHA1` key from the `debug` variant.
+    - Paste it into Firebase Console > _Project Settings > Android App > Add Fingerprint_.
 
 ---
 
