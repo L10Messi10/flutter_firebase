@@ -152,7 +152,63 @@ StreamBuilder<User?>(
 
 ---
 
-## 7. Configuration Files (`firebase_options.dart`)
+## 7. Connecting the App (The Easy Way - CLI)
+
+If you have the tools installed, this automates everything.
+
+### Prerequisites
+
+1.  **Node.js**: Installed on your system.
+2.  **Firebase CLI**: Run `npm install -g firebase-tools`.
+3.  **FlutterFire CLI**: Run `dart pub global activate flutterfire_cli`.
+
+### Steps
+
+1.  **Login**: Run `firebase login` in your terminal.
+2.  **Configure**: Run `flutterfire configure`.
+3.  **Select Project**: Choose the project you created in Step 2.
+4.  **Select Platforms**: Use arrow keys/spacebar to select `android` and `web`.
+5.  **Done**: This automatically generates `lib/firebase_options.dart` and `google-services.json`.
+
+---
+
+## 7b. Connecting the App (The Manual Way)
+
+If CLI fails or isn't installed, do this manually.
+
+### Step 1: Open `lib/firebase_options.dart`
+
+You will see a file with placeholder strings like `'REPLACE_WITH_YOUR_ANDROID_API_KEY'`.
+
+### Step 2: Get Android Values
+
+1.  Open **`android/app/google-services.json`**.
+2.  Find the `client` array -> `client_info` -> `mobilesdk_app_id` (This is your **appId**).
+3.  Find `api_key` -> `current_key` (This is your **apiKey**).
+4.  Find `project_info` -> `project_id` (This is your **projectId**).
+5.  Find `project_info` -> `storage_bucket` (This is your **storageBucket**).
+6.  **Update `lib/firebase_options.dart`** under `static const FirebaseOptions android`:
+    ```dart
+    static const FirebaseOptions android = FirebaseOptions(
+      apiKey: 'PASTE_YOUR_API_KEY_HERE',
+      appId: 'PASTE_YOUR_APP_ID_HERE',
+      messagingSenderId: 'YOUR_SENDER_ID',
+      projectId: 'YOUR_PROJECT_ID',
+      storageBucket: 'YOUR_STORAGE_BUCKET',
+    );
+    ```
+
+### Step 3: Get Web Values (If running on Chrome)
+
+1.  Go to Firebase Console > **Project Settings**.
+2.  Scroll down to "Your apps" > Select **Web App**.
+3.  Under "SDK setup and configuration", select **Config**.
+4.  Copy the values from the `firebaseConfig` object.
+5.  Paste them into the `web` section of `lib/firebase_options.dart`.
+
+---
+
+## 8. Configuration Files (`firebase_options.dart`)
 
 This file connects our Flutter code to the specific Firebase project.
 
@@ -162,7 +218,7 @@ This file connects our Flutter code to the specific Firebase project.
 
 ---
 
-## 8. Summary of Flow
+## 9. Summary of Flow
 
 1.  **App Starts**: `main.dart` initializes Firebase.
 2.  **Auth Check**: `StreamBuilder` checks if a user is already logged in.

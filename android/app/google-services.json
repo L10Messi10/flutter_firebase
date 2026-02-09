@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "159602535976",
+    "firebase_url": "https://gradium-f3e76-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "gradium-f3e76",
+    "storage_bucket": "gradium-f3e76.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159602535976:android:cd138822dfb453ba4a0f1d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159602535976-4920r8kvbehgc9376eegr12p5m1sahue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0-o2-gejJcaWaS1OracjAuzS0DBadl_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159602535976-4920r8kvbehgc9376eegr12p5m1sahue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
