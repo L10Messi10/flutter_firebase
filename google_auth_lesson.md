@@ -19,10 +19,16 @@ Before writing any code, we must set up our project's "Home" on Google.
     - Package Name: `com.example.flutter_firebase` (Must match your `android/app/build.gradle`).
     - **SHA-1 Fingerprint**: Get this by running `.\gradlew signingReport` in your `android` folder. Use the key from the `debug` variant.
     - **Alternative**: If Gradle still won't work, you can get the SHA-1 directly using the Java keytool utility. Run this command in your terminal (replace <YourUser> with your Windows username):
-    ```
+    ```powershell
     keytool -list -v -keystore "C:\Users\<YourUser>\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
     ```
 
+    - **"Missing Keystore" Error?**: If it says the file is missing, it's usually because you haven't run the app on Android yet.
+      - **Easy Fix**: Connect an emulator or device and run `flutter run`. This creates the file automatically.
+      - **Manual Fix**: Run this command to create a new debug keystore:
+        ```powershell
+        keytool -genkey -v -keystore "C:\Users\<YourUser>\.android\debug.keystore" -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+        ```
     - Download `google-services.json` and move it to `android/app/`.
     - **Error**: If you get an error like "keytool is not recognized as an internal or external command", it means Java is not installed or not added to your system's PATH. You must install **Java Development Kit (JDK) 17** first.
     - **Download Links (Windows):**
