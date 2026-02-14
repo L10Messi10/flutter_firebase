@@ -18,6 +18,10 @@ Before writing any code, we must set up our project's "Home" on Google.
 1.  **Android**:
     - Package Name: `com.example.flutter_firebase` (Must match your `android/app/build.gradle`).
     - **SHA-1 Fingerprint**: Get this by running `.\gradlew signingReport` in your `android` folder. Use the key from the `debug` variant.
+    - **Alternative**: If Gradle still won't work, you can get the SHA-1 directly using the Java keytool utility. Run this command in your terminal (replace <YourUser> with your Windows username):
+    ```
+    keytool -list -v -keystore "C:\Users\<YourUser>\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+    ```
     - Download `google-services.json` and move it to `android/app/`.
 2.  **Web**:
     - Click **"Add App"** > Select **Web**.
