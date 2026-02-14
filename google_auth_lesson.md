@@ -22,7 +22,12 @@ Before writing any code, we must set up our project's "Home" on Google.
     ```
     keytool -list -v -keystore "C:\Users\<YourUser>\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
     ```
+
     - Download `google-services.json` and move it to `android/app/`.
+    - **Error**: If you get an error like "keytool is not recognized as an internal or external command", it means Java is not installed or not added to your system's PATH. You must install **Java Development Kit (JDK) 17** first.
+    - **Download Links (Windows):**
+      - [Microsoft Build of OpenJDK 17](https://aka.ms/download-jdk17-windows-x64) (Official Microsoft Installer)
+      - [Eclipse Temurin 17](https://adoptium.net/temurin/releases/?version=17) (Community Standard)
 2.  **Web**:
     - Click **"Add App"** > Select **Web**.
     - Register the app and copy the `firebaseConfig` object (you'll need this later).
