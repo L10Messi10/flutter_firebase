@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_firebase/auth_service.dart';
@@ -13,7 +14,7 @@ void main() async {
     );
   } catch (e) {
     // Fallback if options are not found, asking user to configure
-    print("Firebase initialization failed: $e");
+    developer.log("Firebase initialization failed: $e");
     // Ensure you have firebase_options.dart
   }
 

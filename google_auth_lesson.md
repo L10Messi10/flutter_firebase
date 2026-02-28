@@ -19,6 +19,7 @@ Before writing any code, we must set up our project's "Home" on Google.
     - Package Name: `com.example.flutter_firebase` (Must match your `android/app/build.gradle`).
     - **SHA-1 Fingerprint**: Get this by running `.\gradlew signingReport` in your `android` folder. Use the key from the `debug` variant.
     - **Alternative**: If Gradle still won't work, you can get the SHA-1 directly using the Java keytool utility. Run this command in your terminal (replace <YourUser> with your Windows username):
+
     ```powershell
     keytool -list -v -keystore "C:\Users\<YourUser>\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
     ```
@@ -34,6 +35,7 @@ Before writing any code, we must set up our project's "Home" on Google.
     - **Download Links (Windows):**
       - [Microsoft Build of OpenJDK 17](https://aka.ms/download-jdk17-windows-x64) (Official Microsoft Installer)
       - [Eclipse Temurin 17](https://adoptium.net/temurin/releases/?version=17) (Community Standard)
+
 2.  **Web**:
     - Click **"Add App"** > Select **Web**.
     - Register the app and copy the `firebaseConfig` object (you'll need this later).
@@ -164,4 +166,11 @@ If you want to be even safer, you can go to **Google Cloud Console > Credentials
 - **401 Error on Web?** Double-check your Web Client ID and Localhost whitelisting in Step 5.
 - **Access Blocked / Testing mode?** Did you click "PUBLISH APP" in Step 6?
 - **Android Login Fails?** Re-check your SHA-1 fingerprint in Step 2.
-- **Hangs on Login?** Did you add the `<meta>` tag to `index.html` in Step 9?
+- **Hangs on Login or "ClientID not set" error?**
+  - First, ensure you added the `<meta>` tag to `web/index.html` in Step 9.
+  - **The Definitive Fix**: Sometimes Flutter fails to read the meta tag. You should pass the Client ID explicitly in your code within `lib/auth_service.dart`:
+    ```dart
+    final GoogleSignIn _googleSignIn = GoogleSignIn(
+      clientId: kIsWeb ? 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com' : null,
+    );
+    ```

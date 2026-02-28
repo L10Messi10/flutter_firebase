@@ -57,9 +57,11 @@ class DefaultFirebaseOptions {
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD0-o2-gejJcaWaS1OracjAuzS0DBadl_o',
     appId: '1:159602535976:android:cd138822dfb453ba4a0f1d',
-    messagingSenderId: 'REPLACE_WITH_YOUR_MESSAGING_SENDER_ID',
+    messagingSenderId: '159602535976',
     projectId: 'gradium-f3e76',
     storageBucket: 'gradium-f3e76.firebasestorage.app',
+    databaseURL:
+        'https://gradium-f3e76-default-rtdb.asia-southeast1.firebasedatabase.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
